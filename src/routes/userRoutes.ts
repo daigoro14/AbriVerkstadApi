@@ -4,7 +4,7 @@ import { authenticateJWT, authorizeRoles } from "../middlewares/authMiddleware";
 
 const router = express.Router();
 
-router.post("/register", authenticateJWT, authorizeRoles(["superAdmin"]), async (req: Request, res: Response): Promise<void> => {
+router.post("/register", async (req: Request, res: Response): Promise<void> => {
     try {
         const { username, email, password, firstName, lastName, roles } = req.body;
 
