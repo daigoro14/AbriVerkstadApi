@@ -17,7 +17,7 @@ router.post("/register", async (req: Request, res: Response): Promise<void> => {
             email, 
             firstName, 
             lastName,
-            roles: roles && Array.isArray(roles) ? roles : ["user"],
+            roles: roles && Array.isArray(roles) ? roles : ["admin"],
         });
 
         const registeredUser = await User.register(newUser, password);
