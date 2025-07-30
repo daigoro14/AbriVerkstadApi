@@ -4,9 +4,7 @@ import passport from "./config/passport";
 import session from "express-session";
 import userRoutes from "./routes/userRoutes";
 import authRoutes from "./routes/authRoutes";
-import tourRoutes from "./routes/tourRoutes";
 import bookingRoutes from "./routes/bookingRoutes";
-import attractionRoutes from './routes/attractionRoutes';
 
 import dotenv from "dotenv";
 import cors from 'cors';
@@ -46,9 +44,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.use("/users", userRoutes);
 app.use("/auth", authRoutes);
-app.use("/tours", tourRoutes);
-app.use("/booking", bookingRoutes);
-app.use("/attractions", attractionRoutes);
+app.use("/bookings", bookingRoutes);
 
 connectDB().then(() => {
   app.listen(port, () => {
