@@ -9,7 +9,6 @@ const passport_1 = __importDefault(require("./config/passport"));
 const express_session_1 = __importDefault(require("express-session"));
 const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 const authRoutes_1 = __importDefault(require("./routes/authRoutes"));
-const tourRoutes_1 = __importDefault(require("./routes/tourRoutes"));
 const bookingRoutes_1 = __importDefault(require("./routes/bookingRoutes"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const cors_1 = __importDefault(require("cors"));
@@ -37,8 +36,7 @@ app.get('/', (req, res) => {
 });
 app.use("/users", userRoutes_1.default);
 app.use("/auth", authRoutes_1.default);
-app.use("/tours", tourRoutes_1.default);
-app.use("/booking", bookingRoutes_1.default);
+app.use("/bookings", bookingRoutes_1.default);
 (0, db_1.default)().then(() => {
     app.listen(port, () => {
         console.log(`🚀 Server running on http://localhost:${port}`);
